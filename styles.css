@@ -212,6 +212,7 @@ Sección Nosotros */
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .grid-item {
@@ -224,7 +225,7 @@ Sección Nosotros */
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
-
+  text-align: left;
 }
 
 .col1 {
@@ -240,9 +241,8 @@ Sección Nosotros */
 }
 
 .grid-item img {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }
 
 #bodyPedidos {
