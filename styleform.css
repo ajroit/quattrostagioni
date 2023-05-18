@@ -1,0 +1,38 @@
+body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+    }
+
+    label {
+      display: grid;
+      align-items: center;
+    }
+
+    #contenedor-pizzas,
+    #agregar-pizza {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .pizza,
+    .cantidad {
+      padding: 5px;
+    }
+
+    .eliminar-pizza {
+      display: grid;
+      place-items: center;
+    }
+
+    button {
+      padding: 10px;
+    }

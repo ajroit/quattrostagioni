@@ -1,0 +1,23 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .grid-item {
+    border: 1px solid #000;
+    padding: 10px;
+  }
+  
+  .col1 {
+    grid-column: span 3;
+  }
+  
+  .col2 {
+    grid-column: span 4;
+  }
+  
+  .col3 {
+    grid-column: span 1;
+  }
+  

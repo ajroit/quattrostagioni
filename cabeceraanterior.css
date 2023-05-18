@@ -1,0 +1,103 @@
+#contenedorLogo {
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    grid-column: 1 / span 4;
+    grid-row: 1;
+    
+  }
+  
+  #contenedorLogo img {
+    grid-column: 1 / span 3; /* Cambio en el número de columnas ocupadas */
+    grid-row: 1 / span 2; /* Cambio en el número de filas ocupadas */
+    display: block;
+    max-width: 18em;
+    height: auto;
+  
+  }
+  
+  #contenedorLogo p {
+    grid-column: 4 / span 8; /* Cambio en el número de columnas ocupadas */
+    grid-row: 1; /* Solo ocupa la fila superior */
+    color: white;
+    font-family: Italianno;
+    font-size: 140px;
+    margin: 0;
+    padding: 0;
+    line-height: 1; /* Establecer una altura de línea ajustada */
+  }
+  
+  #slogan {
+    color: white;
+    grid-column: 4 / span 8; /* Cambio en el número de columnas ocupadas */
+    grid-row: 2; 
+    line-height: 1; /* Establecer una altura de línea ajustada */
+    text-align: right;
+    margin: 0;
+    margin-right: 2em;
+    padding: 0;
+  
+  }
+  
+  @media (max-width: 800px) {
+    #contenedorLogo {
+      grid-template-columns: repeat(8, 1fr); /* Mantener 8 columnas */
+      grid-template-rows: auto auto auto; /* Establecer 3 filas automáticas */
+    }
+  
+    #contenedorLogo img {
+      grid-column: 3 / span 4; /* Ocupar las columnas 3 a 6 */
+      grid-row: 1; /* Ubicar en la primera fila */
+      justify-self: center; /* Centrar horizontalmente */
+      max-width: 9em;
+    }
+  
+    #contenedorLogo p {
+      grid-row: 2; /* Ubicar en la segunda fila */
+      grid-column: 1 / span 8; /* Ocupar las columnas 3 a 6 */
+      justify-self: center; /* Centrar horizontalmente */
+      font-size: 70px;
+    }
+  
+    #contenedorLogo #slogan {
+      grid-row: 3; /* Ubicar en la tercera fila */
+      justify-self: right; /* Centrar horizontalmente */
+    }
+  }
+  @media (max-width: 640px) {
+    #slogan { 
+      grid-row: 3; /* Ubicar en la tercera fila */
+      justify-self: right; 
+      grid-column: 1 / span 8; /* Ocupar las columnas 3 a 6 */
+      font-size: 20px;
+  }
+  }
+  
+  @media (max-width: 400px) {
+    #contenedorLogo {
+      grid-template-columns: repeat(8, 1fr); /* Mantener 8 columnas */
+      grid-template-rows: auto auto auto; /* Establecer 3 filas automáticas */
+    }
+  
+    #contenedorLogo img {
+      grid-column: 3 / span 4; /* Ocupar las columnas 3 a 6 */
+      grid-row: 1; /* Ubicar en la primera fila */
+      justify-self: center; /* Centrar horizontalmente */
+      max-width: 9em;
+    }
+  
+    #contenedorLogo p {
+      grid-row: 2; /* Ubicar en la segunda fila */
+      grid-column: 1 / span 8; /* Ocupar las columnas 3 a 6 */
+      justify-self: center; /* Centrar horizontalmente */
+    }
+  
+    #contenedorLogo #slogan {
+      grid-row: 3; /* Ubicar en la tercera fila */
+      justify-self: right; 
+      grid-column: 1 / span 8; /* Ocupar las columnas 3 a 6 */
+      font-size: 20px;
+  
+    }
+  }
+  

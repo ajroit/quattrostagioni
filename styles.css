@@ -1,0 +1,339 @@
+#bodyIndex {
+  margin: 0;
+  padding: 0;
+  position: relative; /* Agregado para establecer un contexto de posicionamiento relativo */
+}
+
+#bodyIndex {
+  background-image: url(img/fondo1-index.jpg);
+  background-size: cover;
+  /* Ajustar tamaño de la imagen */
+  background-repeat: no-repeat;
+  /* Evitar repetición de la imagen */
+  background-position: center;
+  min-height: 100vh; /* Establecer una altura mínima para el body */
+  margin-bottom: -50px; /* Mover el contenido del body hacia arriba para superponer el footer */
+}
+header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(auto, 1fr) auto;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: solid;
+  padding: 10px 10px 0; /* Ajusta el espacio interno del header y elimina el espacio inferior */
+}
+
+header p {
+  grid-row: 1;
+  grid-column: 1 / span 4;
+  text-align: center;
+  font-size: 4em;
+  font-family: 'Alegreya', serif;
+  color: rgb(208, 177, 119);
+  min-height: 80px;
+  max-height: none; /* Ajuste para permitir que el texto se ajuste automáticamente */
+  overflow: visible; /* Ajuste para mostrar el contenido completo sin desplazamiento */
+  padding-bottom: 1px;
+  margin-bottom: 0;
+  overflow-wrap: break-word;
+}
+
+
+header nav {
+  grid-row: 2;
+  grid-column: 1 / span 4;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+header nav li {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+header nav li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(208, 177, 119);
+  font-family: 'Alegreya', serif;
+
+}
+
+header nav li:hover a {
+  color: #834510;
+  transition: color 0.5s;
+}
+
+#textoInicio {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  font-family: 'Alegreya', serif;
+  font-size: 3em;
+
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Ajusta el valor según la altura deseada para tu footer */
+  background-color: rgba(0, 0, 0, 0.9);
+  margin-top: -30px; /* Superponer el footer con el final de la imagen de fondo */
+}
+
+#textoFooter {
+  font-family: 'Alegreya', serif;
+  color: rgb(208, 177, 119);
+  grid-column: 1 /span 3;
+  font-size: 1em;
+  grid-row: 1;
+  margin: 10px 10px;
+  font-style: italic;
+
+}
+footer ul {
+  grid-column: 2 /span 4;
+  grid-row: 1;
+  display: flex;
+  justify-content: right;
+  padding: 0;
+}
+
+footer li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+footer ul li:hover img {
+  transform: scale(1.1);
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#bodyNosotros {
+  background-image: url(img/BG_index.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 100px; /* Ajusta el valor según la altura deseada para el footer */
+  position: relative; /* Añadimos posición relativa para establecer el contexto de desplazamiento */
+}
+
+#bodyNosotros:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: inherit;
+}
+
+#bodyNosotros footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Ajusta el valor según la altura deseada para tu footer */
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#textoFooter {
+  font-family: 'Alegreya', serif;
+  color: rgb(208, 177, 119);
+  grid-column: 1 /span 3;
+  font-size: 1em;
+  grid-row: 1;
+  margin: 10px 10px;
+  font-style: italic;
+
+}
+
+#bodyNosotros footer ul {
+  grid-column: 2 /span 4;
+  grid-row: 1;
+  display: flex;
+  justify-content: right;
+  padding: 0;
+}
+
+#bodyNosotros footer li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+#bodyNosotros footer ul li:hover img {
+  transform: scale(1.1);
+}
+.contenedorNosotros {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 2%;
+  grid-row-gap: 20px; /* Ajusta el valor según el espacio deseado entre filas */
+}
+
+.fraseNosotros {
+  text-align: justify;
+  font-size: 1em;
+  font-family: 'Alegreya', serif;
+  color: rgb(208, 177, 119);
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+}
+
+.imgNosotros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.imgNosotros img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Media query para viewport con ancho menor a 630px */
+@media (max-width: 630px) {
+  .contenedorNosotros {
+    grid-template-columns: 1fr;
+  }
+
+  .imgNosotros {
+    grid-row: 1;
+  }
+
+  .fraseNosotros {
+    grid-row: 2;
+  }
+}
+
+/* Menu */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-item {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: justify;
+  font-size: 1em;
+  font-family: 'Alegreya', serif;
+  color: rgb(208, 177, 119);
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+
+}
+
+.col1 {
+  grid-column: span 3;
+}
+
+.col2 {
+  grid-column: span 4;
+}
+
+.col3 {
+  grid-column: span 1;
+}
+
+.grid-item img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#bodyPedidos {
+  background-image: url(img/verde-fondo.jpg);
+  background-size: cover;
+  /* Ajustar tamaño de la imagen */
+  background-repeat: no-repeat;
+  /* Evitar repetición de la imagen */
+  background-position: center;
+  min-height: 100vh; /* Establecer una altura mínima para el body */
+  margin-bottom: -50px; /* Mover el contenido del body hacia arriba para superponer el footer */
+}
+
+#contenido {
+  min-height: calc(100vh - 100px); /* ajusta el valor en "100px" según el espacio deseado entre el main y el footer */
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  margin: 20px;
+  margin-bottom: 100px; /* Espacio adicional para evitar superposición con el footer */
+}
+
+form {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin-bottom: 20px; /* Espacio entre el formulario y el footer */
+  overflow: auto;
+}
+
+form label {
+  color: rgb(208, 177, 119);
+  font-family: 'Alegreya', serif;
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#detalle-pedido {
+  grid-column: 2;
+  grid-row: 1;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  color: rgb(208, 177, 119);
+}
+
+#footerPedidos {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  color: rgb(208, 177, 119);
+  text-align: center;
+}
