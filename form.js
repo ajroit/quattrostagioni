@@ -1,3 +1,5 @@
+//Esta función valida los datos del formulario
+
 function validarFormulario() {
     var nombre = document.getElementById('nombre').value;
     var calle = document.getElementById('calle').value;
@@ -56,6 +58,8 @@ function validarFormulario() {
     return false; // Evita que el formulario se envíe realmente
 }
 
+//Esta función nos muestra los detalles del pedido
+
 function mostrarDetallePedido(nombre, calle, numero, localidad) {
     var pizzas = document.getElementsByClassName('pizza');
     var cantidades = document.getElementsByClassName('cantidad');
@@ -92,6 +96,8 @@ function mostrarDetallePedido(nombre, calle, numero, localidad) {
     contenedorDetalle.innerHTML = detalleHTML;
 }
 
+//Esta función calcula las unidades de Pizzas
+
 function calcularUnidadesTotales(cantidades) {
     var unidadesTotales = 0;
 
@@ -106,6 +112,8 @@ function calcularUnidadesTotales(cantidades) {
     return unidadesTotales;
 }
 
+//Está función calcula el valor del pedido
+
 function calcularValorPizza(pizza) {
     switch (pizza) {
         case "Quattro Stagioni":
@@ -119,7 +127,7 @@ function calcularValorPizza(pizza) {
     }
 }
 
-// --------------
+// Esta función permite agregar pizzas adicionales al pedido
 
 function agregarPizza() {
     var contenedor = document.getElementById('contenedor-pizzas');
