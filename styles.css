@@ -212,7 +212,6 @@ Sección Nosotros */
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .grid-item {
@@ -225,7 +224,7 @@ Sección Nosotros */
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
-  text-align: left;
+
 }
 
 .col1 {
@@ -241,8 +240,9 @@ Sección Nosotros */
 }
 
 .grid-item img {
-  max-width: 100%;
-  height: auto;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
 }
 
 #bodyPedidos {
@@ -255,7 +255,6 @@ Sección Nosotros */
   background-position: center;
   min-height: 100vh; /* Establece una altura mínima para el body */
   margin-bottom: -50px; /* Mueve el contenido del body hacia arriba para superponer el footer (y lograr el efecto transparencia */
-
 }
 /* 
 Sección Pedidos (Acá necesito mucha ayuda para resolver el formato)*/
