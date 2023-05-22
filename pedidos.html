@@ -10,70 +10,76 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Playfair+Display&family=Sen:wght@700&display=swap" rel="stylesheet">  <title>Quatro Stagioni | Pizza Napolitana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Playfair+Display&family=Sen:wght@700&display=swap" rel="stylesheet">
+  <title>Quatro Stagioni | Pizza Napolitana</title>
 </head>
 
-<body id="bodyPedidos"> 
+<body id="bodyPedidos">
   <header id="cabecera">
-  <p id="nombrePizzeria"> Quattro Stagioni</p>
-  <nav class="navegacion">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
-      <li><a href="menu.html">Menú</a></li>
-      <li><a href="pedidos.html">Pedidos</a></li>
-    </ul>
-  </nav>
+    <p id="nombrePizzeria"> Quattro Stagioni</p>
+    <nav class="navegacion">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+      </ul>
+    </nav>
   </header>
   <div id="contenido">
-  <main>
-  
-    <form onsubmit="return validarFormulario()">
-      <label for="nombre">Nombre y Apellido:</label>
-      <input type="text" id="nombre" name="nombre" required>
-      <label for="correo">Correo Electrónico:</label>
-      <input type="text" id="correo" name="correo" required>
-      <label for="calle">Calle:</label>
-      <input type="text" id="calle" name="calle" required>
-      <label for="numero">Número:</label>
-      <input type="text" id="numero" name="numero" required>
-      <label for="localidad">Localidad:</label>
-      <input type="text" id="localidad" name="localidad" required>
-  
-      <div id="contenedor-pizzas">
-        <label for="pizza">Pizza:</label>
-        <select class="pizza" name="pizza" required>
-          <option value="" disabled selected>Seleccione una pizza</option>
-          <option value="Quattro Stagioni">Pizza Quattro Stagioni - $2.100</option>
-          <option value="Margherita">Pizza Margherita - $1.900</option>
-          <option value="Marinara">Pizza Marinara - $1.750</option>
-        </select>
-  
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" class="cantidad" name="cantidad" min="1" required>
-      </div>
-  
-      <div id="agregar-pizza">
-        <button type="button" onclick="agregarPizza()">Agregar otra pizza</button>
-      </div>
-  
-      <button type="submit">Calcular el precio del pedido</button>
-    </form>
-  
-    <div id="detalle-pedido"></div>
-  </div>
-    <script src="form.js"></script>
+    <main>
+      <form id="formulario-pedido" onsubmit="return validarFormulario(event)">
 
-  </main>
-</div>
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="correo">Correo Electrónico:</label>
+        <input type="text" id="correo" name="correo" required>
+        <label for="calle">Calle:</label>
+        <input type="text" id="calle" name="calle" required>
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" required>
+        <label for="localidad">Localidad:</label>
+        <input type="text" id="localidad" name="localidad" required>
+
+        <div id="contenedor-pizzas">
+          <label for="pizza">Pizza:</label>
+          <select class="pizza" name="pizza" required>
+            <option value="" disabled selected>Seleccione una pizza</option>
+            <option value="Quattro Stagioni">Pizza Quattro Stagioni - $2.100</option>
+            <option value="Margherita">Pizza Margherita - $1.900</option>
+            <option value="Marinara">Pizza Marinara - $1.750</option>
+          </select>
+
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" class="cantidad" name="cantidad" min="1" required>
+        </div>
+
+        <div id="agregar-pizza">
+          <button type="button" onclick="agregarPizza()">Agregar otra pizza</button>
+        </div>
+
+        <button type="submit">Calcular el precio del pedido</button>
+      </form>
+
+      <div id="detalle-pedido"></div>
+      <div id="mapa-container">
+        <h1>Encontranos acá:</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26270.21858819934!2d-58.583977005337225!3d-34.60979189747203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb8698cab7fa3%3A0xc4d83fe138c75b6f!2sCaseros%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1684612685930!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </main>
+  
+  </div>
+
   <footer id="footerPedidos">
     <div id="textoFooter">Av. Siempre Viva 742. Caseros. Provincia de Buenos Aires</div>
     <ul>
-      <li><a href="#"><img src="img/IG.png" width="50px" height="50px" </a></li>
-      <li><a href="https://wa.me/5491168080953"><img src="img/WA.png" width="50px" height="50px" </a></li>
-      <li><a href="#"><img src="img/mail.png" width="50px" height="50px" </a></li>
+      <li><a href="#"><img src="img/IG.png" width="50px" height="50px"></a></li>
+      <li><a href="https://wa.me/5491168080953"><img src="img/WA.png" width="50px" height="50px"></a></li>
+      <li><a href="#"><img src="img/mail.png" width="50px" height="50px"></a></li>
     </ul>
   </footer>
+
+  <script src="form.js"></script>
 </body>
 
 </html>

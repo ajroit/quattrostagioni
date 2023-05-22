@@ -1,6 +1,7 @@
-//Esta función valida los datos del formulario
+// Esta función valida los datos del formulario
+function validarFormulario(event) {
+    event.preventDefault(); // Evita que el formulario se envíe realmente
 
-function validarFormulario() {
     var nombre = document.getElementById('nombre').value;
     var calle = document.getElementById('calle').value;
     var numero = document.getElementById('numero').value;
@@ -11,26 +12,26 @@ function validarFormulario() {
     // Validación de la localidad
     if (localidad === '') {
         alert('Por favor, completa el campo de localidad.');
-        return false;
+        return;
     }
 
     // Validación del nombre y apellido
     var letras = /^[A-Za-z ]+$/;
     if (!nombre.match(letras)) {
         alert('Por favor, ingresa un nombre y apellido válidos (solo se admiten caracteres alfabéticos).');
-        return false;
+        return;
     }
 
     // Validación de la calle
     if (calle === '') {
         alert('Por favor, completa el campo de calle.');
-        return false;
+        return;
     }
 
     // Validación del número
     if (numero === '') {
         alert('Por favor, completa el campo de número.');
-        return false;
+        return;
     }
 
     // Validación de al menos una pizza seleccionada
@@ -42,24 +43,64 @@ function validarFormulario() {
     }
     if (seleccionadas === 0) {
         alert('Por favor, selecciona al menos una pizza.');
-        return false;
+        return;
     }
 
     // Validación de las cantidades
     for (var i = 0; i < cantidades.length; i++) {
         if (cantidades[i].value === '') {
             alert('Por favor, ingresa la cantidad deseada para cada pizza seleccionada.');
-            return false;
+            return;
         }
     }
 
     mostrarDetallePedido(nombre, calle, numero, localidad);
-
-    return false; // Evita que el formulario se envíe realmente
+    mostrarBotones();
 }
 
-//Esta función nos muestra los detalles del pedido
+/// Esta función muestra los botones cuando aparece el detalle del pedido
+function mostrarBotones() {
+    var detallePedido = document.getElementById("detalle-pedido");
 
+    // Verificar si los botones ya se agregaron previamente
+    if (detallePedido.querySelector("#btn-confirmar") === null) {
+        var botonConfirmar = document.createElement("button");
+        botonConfirmar.id = "btn-confirmar";
+        botonConfirmar.innerText = "Confirmar Pedido";
+        botonConfirmar.type = "button";
+
+        // Agregar evento al botón "Confirmar Pedido"
+        botonConfirmar.addEventListener("click", function() {
+            // Obtener el nombre ingresado en el formulario
+            var nombre = document.getElementById("nombre").value;
+
+            // Restablecer el formulario
+            document.getElementById("formulario-pedido").reset();
+            // Eliminar los botones del detalle del pedido
+            detallePedido.innerHTML = "";
+
+            // Mostrar alerta personalizado con el nombre
+            alert("Muchas gracias " + nombre + ", tu pedido ya quedó confirmado y lo enviaremos a tu domicilio.");
+        });
+
+        var botonCancelar = document.createElement("button");
+        botonCancelar.id = "btn-cancelar";
+        botonCancelar.innerText = "Cancelar";
+        botonCancelar.type = "button";
+
+        botonCancelar.addEventListener("click", function() {
+            // Restablecer el formulario
+            document.getElementById("formulario-pedido").reset();
+            // Eliminar los botones del detalle del pedido
+            detallePedido.innerHTML = "";
+        });
+
+        detallePedido.appendChild(botonConfirmar);
+        detallePedido.appendChild(botonCancelar);
+    }
+}
+
+// Esta función muestra los detalles del pedido
 function mostrarDetallePedido(nombre, calle, numero, localidad) {
     var pizzas = document.getElementsByClassName('pizza');
     var cantidades = document.getElementsByClassName('cantidad');
@@ -89,15 +130,14 @@ function mostrarDetallePedido(nombre, calle, numero, localidad) {
 
     detalleHTML += "</ul>";
     detalleHTML += "<p>Valor total: $" + valorTotal + "</p>";
-    detalleHTML += "<p>Pedido para ser entregado en: " + calle + " " + numero + " ("  + localidad + ")</p>";
+    detalleHTML += "<p>Pedido para ser entregado en: " + calle + " " + numero + " (" + localidad + ")</p>";
 
 
     var contenedorDetalle = document.getElementById('detalle-pedido');
     contenedorDetalle.innerHTML = detalleHTML;
 }
 
-//Esta función calcula las unidades de Pizzas
-
+// Esta función calcula las unidades de Pizzas
 function calcularUnidadesTotales(cantidades) {
     var unidadesTotales = 0;
 
@@ -112,8 +152,7 @@ function calcularUnidadesTotales(cantidades) {
     return unidadesTotales;
 }
 
-//Está función calcula el valor del pedido
-
+// Está función calcula el valor del pedido
 function calcularValorPizza(pizza) {
     switch (pizza) {
         case "Quattro Stagioni":
@@ -128,7 +167,6 @@ function calcularValorPizza(pizza) {
 }
 
 // Esta función permite agregar pizzas adicionales al pedido
-
 function agregarPizza() {
     var contenedor = document.getElementById('contenedor-pizzas');
 
@@ -184,4 +222,3 @@ function agregarPizza() {
 
     contenedor.appendChild(div);
 }
-

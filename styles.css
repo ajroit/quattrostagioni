@@ -260,48 +260,113 @@ Sección Nosotros */
 Sección Pedidos (Acá necesito mucha ayuda para resolver el formato)*/
 
 #contenido {
-  min-height: calc(100vh - 100px); /* ajusta el valor en "100px" según el espacio deseado entre el main y el footer */
-}
+  margin-bottom: 70px; /* Ajusta la altura del margen inferior según sea necesario */
+  }
+  
 
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   margin: 20px;
-  margin-bottom: 100px; /* Espacio adicional para evitar superposición con el footer */
+  margin-bottom: 300px; /* Ajusta la altura del margen inferior según sea necesario */
+
 }
 
 form {
   grid-column: 1;
-  grid-row: 1 / span 2;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  margin-bottom: 20px; /* Espacio entre el formulario y el footer */
-  overflow: auto;
-}
-
-form label {
-  color: rgb(208, 177, 119);
+  grid-row: 1 / span 2; /* Ocupa la primera y segunda fila */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(208, 177, 119, 0.5);
   font-family: 'Alegreya', serif;
-  margin-bottom: 10px;
 }
 
-form input {
+
+label {
+  grid-column: 1 / span 2;
+  justify-self: end; /* Alinea los campos del label a la derecha */
+  font-family: 'Alegreya', serif;
+}
+
+input[type="text"],
+select {
+  width: 70%; /* Ajusta el porcentaje según sea necesario */
+  padding: 5px;
+  justify-self: start; /* Alinea los campos del input y select a la izquierda */
+}
+
+
+select.pizza {
+  width: calc(100% - 65px);
+}
+
+#contenedor-pizzas label,
+#contenedor-pizzas select,
+#contenedor-pizzas input {
   width: 100%;
-  margin-bottom: 10px;
+  padding: 5px;
+}
+
+#contenedor-pizzas label {
+  grid-column: 1;
+}
+
+#contenedor-pizzas select.pizza {
+  width: calc(100% - 65px);
+}
+
+#contenedor-pizzas input.cantidad {
+  width: calc(100% - 65px);
+}
+
+#agregar-pizza {
+  grid-column: 1;
+  text-align: center;
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  grid-column: 1 / span 2;
 }
 
 #detalle-pedido {
   grid-column: 2;
-  grid-row: 1;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  color: rgb(208, 177, 119);
+  background-color: rgba(208, 177, 119, 0.5); /* Color de fondo del formulario */
+  padding: 10px;
+  width: 60vh;
 }
 
 #footerPedidos {
-  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 20px;
-  color: rgb(208, 177, 119);
-  text-align: center;
+  transform: translateY(calc(100% - 100px)); /* Ajuste para mover el footer hacia abajo */
 }
+
+#footerPedidos p {
+  font-family: 'Alegreya', serif;
+  color: rgb(208, 177, 119);
+  font-size: 1em;
+  margin: 10px;
+  font-style: italic;
+  text-align: left;
+}
+
+
+#mapa-container {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 10px;
+  background-color: rgba(208, 177, 119, 0.5); /* Color de fondo del formulario */
+  width: 60vh;
+}
+
