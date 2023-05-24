@@ -14,6 +14,7 @@
   min-height: 100vh; /* Establece una altura mínima para el body */
   margin-bottom: -50px; /* Mueve el contenido del body hacia arriba para superponer el footer (y lograr el efecto transparencia */
 }
+
 header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -39,7 +40,6 @@ header p {
   margin-bottom: 0;
   overflow-wrap: break-word;
 }
-
 
 header nav {
   grid-row: 2;
@@ -71,7 +71,6 @@ header nav li a {
   text-decoration: none;
   color: rgb(208, 177, 119);
   font-family: 'Alegreya', serif;
-
 }
 
 header nav li:hover a {
@@ -79,12 +78,34 @@ header nav li:hover a {
   transition: color 0.5s;
 }
 
-#textoInicio {
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 5px;
+.grid-container-index {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.grid-item-index {
+  padding: 10px;
   font-family: 'Alegreya', serif;
+}
+
+#textoInicio {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  background-color: rgba(255, 255, 255, 0.5);
   font-size: 3em;
+}
+
+#clima {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+  border: solid;
+  color: rgb(208, 177, 119);
+  text-align: center;
+  margin: 5px;
 }
 
 footer {
@@ -107,8 +128,8 @@ footer {
   grid-row: 1;
   margin: 10px 10px;
   font-style: italic;
-
 }
+
 footer ul {
   grid-column: 2 /span 4;
   grid-row: 1;
@@ -125,6 +146,34 @@ footer li {
 footer ul li:hover img {
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  footer {
+    grid-template-columns: repeat(3, 1fr); 
+    justify-content: center;
+  }
+
+  #textoFooter {
+    display: none; 
+  }
+
+  .grid-container-index {
+    grid-auto-rows: min-content; /* Ajuste para que las filas se ajusten al contenido mínimo */
+  }
+
+  #clima {
+    grid-column: 1 / span 4;
+    grid-row: 3;
+    margin-bottom: 10px; /* Agrega un margen inferior para separar de manera adecuada el footer */
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    position: static;
+  }
+}
+
 /* 
 Sección Nosotros */
 
@@ -188,6 +237,7 @@ Sección Nosotros */
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 5px;
+  line-height: 1.5;
 }
 
 .imgNosotros {
@@ -262,12 +312,11 @@ Sección Nosotros */
 }
 
 }
-
 /* Sección Menu */
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: 1fr 3fr; 
   grid-gap: 10px;
 }
 
@@ -281,19 +330,14 @@ Sección Nosotros */
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
-
 }
 
 .col1 {
-  grid-column: span 3;
+  grid-column: 1 / span 1; /* Cambio en esta línea */
 }
 
 .col2 {
-  grid-column: span 4;
-}
-
-.col3 {
-  grid-column: span 1;
+  grid-column: 2 / span 2; /* Cambio en esta línea */
 }
 
 .grid-item img {
