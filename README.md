@@ -1,4 +1,4 @@
-# quattrostagioni
+# Pizzería Quattro Stagioni
 Proyecto de página WEB - TPO para el curso Codo a Codo
 
 Checklist de tareas realizadas, en cumplimiento de las consignas propuestas:
