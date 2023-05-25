@@ -1,6 +1,6 @@
 // Esta función valida los datos del formulario
 function validarFormulario(event) {
-    event.preventDefault(); // Evita que el formulario se envíe realmente
+    event.preventDefault(); 
 
     var nombre = document.getElementById('nombre').value;
     var calle = document.getElementById('calle').value;
