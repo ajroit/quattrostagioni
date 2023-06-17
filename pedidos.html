@@ -32,19 +32,19 @@
       <form id="formulario-pedido" onsubmit="return validarFormulario(event)">
 
         <label for="nombre">Nombre y Apellido:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre">
         <label for="correo">Correo Electrónico:</label>
-        <input type="text" id="correo" name="correo" required>
+        <input type="text" id="correo" name="correo">
         <label for="calle">Calle:</label>
-        <input type="text" id="calle" name="calle" required>
+        <input type="text" id="calle" name="calle">
         <label for="numero">Número:</label>
-        <input type="text" id="numero" name="numero" required>
+        <input type="text" id="numero" name="numero">
         <label for="localidad">Localidad:</label>
-        <input type="text" id="localidad" name="localidad" required>
+        <input type="text" id="localidad" name="localidad">
 
         <div id="contenedor-pizzas">
           <label for="pizza">Pizza:</label>
-          <select class="pizza" name="pizza" required>
+          <select class="pizza" name="pizza">
             <option value="" disabled selected>Seleccione una pizza</option>
             <option value="Quattro Stagioni">Pizza Quattro Stagioni - $2.100</option>
             <option value="Margherita">Pizza Margherita - $1.900</option>
@@ -52,7 +52,7 @@
           </select>
 
           <label for="cantidad">Cantidad:</label>
-          <input type="number" class="cantidad" name="cantidad" min="1" required>
+          <input type="number" class="cantidad" name="cantidad" min="1">
         </div>
 
         <div id="agregar-pizza">

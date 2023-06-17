@@ -8,19 +8,27 @@ function validarFormulario(event) {
     var localidad = document.getElementById('localidad').value;
     var pizzas = document.getElementsByClassName('pizza');
     var cantidades = document.getElementsByClassName('cantidad');
+    var correo = document.getElementById('correo').value;
 
-    // Validación de la localidad
-    if (localidad === '') {
-        alert('Por favor, completa el campo de localidad.');
+     // Validación del nombre y apellido
+     var letras = /^[A-Za-z ]+$/;
+     if (!nombre.match(letras)) {
+         alert('Por favor, ingresa un nombre y apellido válidos (solo se admiten caracteres alfabéticos).');
+         return;
+     }
+     
+     // Validación del correo 
+    if (correo === '') {
+        alert('Por favor, completá tu correo electrónico.');
         return;
     }
 
-    // Validación del nombre y apellido
-    var letras = /^[A-Za-z ]+$/;
-    if (!nombre.match(letras)) {
-        alert('Por favor, ingresa un nombre y apellido válidos (solo se admiten caracteres alfabéticos).');
-        return;
-    }
+     // Validación de la dirección de correo
+     var correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+     if (!correo.match(correoValido)) {
+         alert('Por favor, ingresa una dirección de correo electrónico válida.');
+         return;
+     }
 
     // Validación de la calle
     if (calle === '') {
@@ -33,6 +41,14 @@ function validarFormulario(event) {
         alert('Por favor, completa el campo de número.');
         return;
     }
+
+    // Validación de la localidad
+    if (localidad === '') {
+        alert('Por favor, completa el campo de localidad.');
+        return;
+    }
+
+   
 
     // Validación de al menos una pizza seleccionada
     var seleccionadas = 0;
